@@ -1,5 +1,7 @@
 # FastAPI with Pydantic Examples
 
+<img width="85" alt="map-user" src="https://img.shields.io/badge/views-000-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-000-green">
+
 [FastAPI](https://fastapi.tiangolo.com/) is a Python library and web framework designed for building APIs. It has the performance of comparable NodeJS and Go with the ease and familiarity of Python. 
 
 [Pydantic](https://docs.pydantic.dev/latest/) is a Python library used for data validation management.
