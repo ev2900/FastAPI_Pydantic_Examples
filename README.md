@@ -16,7 +16,7 @@ Below are the details of what is in each example
 * [Example_3](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main/Example_3) - Model Classes and Nested Models
 * [Example_4](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main/Example_4) - URL Query Parameters for Filtering
 * [Example_5](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main/Example_5) - Request Body and POST requests + Pydantic pre-validators
-* [Example_6](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main/Example_6) - Annotated Type for Data Validation + Metadata
+* [Example_6](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main/Example_6) - Annotated Type for Data Validation + Metadata (Work in progress)
 
 ## Set Up
 To run the examples you will need to install FastAPI and Pydantic. I built these examples using Pydantic version ```2.11.7``` and FastAPI version ```0.116.1```. You can install these via. the included [requirements.txt](https://github.com/ev2900/FastAPI_Pydantic_Examples/blob/main/requirements.txt). 
