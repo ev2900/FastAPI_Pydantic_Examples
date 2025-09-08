@@ -18,12 +18,12 @@ Below are the details of what is in each example
 * [Example_5](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main/Example_5) - Request Body and POST requests + Pydantic pre-validators
 * [Example_6](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main/Example_6) - Annotated Type for Data Validation + Metadata
 
-# Set Up
+## Set Up
 To run the examples you will need to install FastAPI and Pydantic. I built these examples using Pydantic version ```2.11.7``` and FastAPI version ```0.116.1```. You can install these via. the included [requirements.txt](https://github.com/ev2900/FastAPI_Pydantic_Examples/blob/main/requirements.txt). 
 
 Run ```pip install -r requirements.txt```
 
-# Local FastAPI Web Server
+## Local FastAPI Web Server
 
 The first few lines of each example python script have this information in comments. To run a local web server ```python -m uvicorn <name_of_file_with_out_file_extentions:app --reload```
 
