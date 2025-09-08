@@ -22,3 +22,5 @@ Below are the details of what is in each example
 To run the examples you will need to install FastAPI and Pydantic. I built these examples using Pydantic version ```2.11.7``` and FastAPI version ```0.116.1```. You can install these via. the included [requirements.txt](https://github.com/ev2900/FastAPI_Pydantic_Examples/blob/main/requirements.txt). 
 
 Run ```pip install -r requirements.txt```
+
+# Local FastAPI Web Server
