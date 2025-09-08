@@ -24,3 +24,7 @@ To run the examples you will need to install FastAPI and Pydantic. I built these
 Run ```pip install -r requirements.txt```
 
 # Local FastAPI Web Server
+
+The first few lines of each example python script have this information in comments. To run a local web server ```python -m uvicorn <name_of_file_with_out_file_extentions:app --reload```
+
+You can then use [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to test your APIs. [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) can be a good place to check that the server is up and running and view the auto documentation that FastAPI creates.
