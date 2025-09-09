@@ -2,9 +2,11 @@
 # python -m uvicorn Example_6:app --reload
 # http://127.0.0.1:8000/
 # http://127.0.0.1:8000/docs
+# http://127.0.0.1:8000/redoc
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Path, Query
 from schemas import GenreURLChoices, BandBase, BandCreate, BandWithID
+from typing import Annotated
 
 app = FastAPI()
 
@@ -62,7 +64,7 @@ async def bands(genre: GenreURLChoices | None = None, has_albums: bool = False) 
 		return BANDS_OBJ
 
 @app.get('/bands/{band_id}')
-async def band(band_id: int) -> BandWithID:
+async def band(band_id: Annotated[int, Path(title="The band ID")]) -> BandWithID:
 	# search for band id
 	for b in BANDS_OBJ:
 		if b.id == band_id:
