@@ -39,14 +39,14 @@ async def bands(genre: GenreURLChoices | None = None, has_albums: bool = False) 
 	if genre and has_albums == True:
 		BANDS_OBJ = band_list_to_object(BANDS)
 		for b in BANDS_OBJ:
-			if b.genre.lower() == genre.value.lower() and len(b.albums) > 0:
+			if b.genre.value.lower() == genre.value.lower() and len(b.albums) > 0:
 				bands_list.append(b)
 		return bands_list
 	# ONLY genre query paramater is provided
 	elif genre:
 		BANDS_OBJ = band_list_to_object(BANDS)
 		for b in BANDS_OBJ:
-			if b.genre.lower() == genre.value.lower():
+			if b.genre.value.lower() == genre.value.lower():
 				bands_list.append(b)
 		return bands_list
 	# ONLY has_albums query paramater is provided
