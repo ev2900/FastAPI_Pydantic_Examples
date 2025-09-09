@@ -31,31 +31,36 @@ BANDS_OBJ = band_list_to_object(BANDS)
 # HTTP routes / APIs
 
 # http://127.0.0.1:8000/bands
+# http://127.0.0.1:8000/bands?genre=rock&q=Blac
 # http://127.0.0.1:8000/bands?genre=rock
-# http://127.0.0.1:8000/bands?has_albums=true
-# http://127.0.0.1:8000/bands?genre=metal&has_albums=true | http://127.0.0.1:8000/bands?genre=rock&has_albums=true
+# http://127.0.0.1:8000/bands?q=Blac
+# http://127.0.0.1:8000/bands?genre=rock&q=Blacccccccccccccccccccccccc
 @app.get('/bands')
-async def bands(genre: GenreURLChoices | None = None, has_albums: bool = False) -> list[BandWithID]:
+async def bands(
+	genre: GenreURLChoices | None = None,
+	q: Annotated[str | None, Query(max_length=10)] = None
+) -> list[BandWithID]:
 	bands_list = []
-	# BOTH genre and has_albums query is provided
-	if genre and has_albums == True:
+	#
+	if genre and q == True:
 		BANDS_OBJ = band_list_to_object(BANDS)
 		for b in BANDS_OBJ:
-			if b.genre.lower() == genre.value.lower() and len(b.albums) > 0:
+			if (b.genre.value.lower() == genre.value.lower()) and (q.lower() in b.name.lower()):
 				bands_list.append(b)
 		return bands_list
-	# ONLY genre query paramater is provided
+
+	# genre query paramater is provided
 	elif genre:
 		BANDS_OBJ = band_list_to_object(BANDS)
 		for b in BANDS_OBJ:
-			if b.genre.lower() == genre.value.lower():
+			if b.genre.value.lower() == genre.value.lower():
 				bands_list.append(b)
 		return bands_list
-	# ONLY has_albums query paramater is provided
-	elif has_albums == True:
+	# if query paramater q is provided, see if q is in the name of the band, like a search
+	elif q:
 		BANDS_OBJ = band_list_to_object(BANDS)
 		for b in BANDS_OBJ:
-			if len(b.albums) > 0:
+			if q.lower() in b.name.lower():
 				bands_list.append(b)
 		return bands_list
 	# no query url return all bands
@@ -64,7 +69,7 @@ async def bands(genre: GenreURLChoices | None = None, has_albums: bool = False) 
 		return BANDS_OBJ
 
 @app.get('/bands/{band_id}')
-async def band(band_id: Annotated[int, Path(title="The band ID")]) -> BandWithID:
+async def band(band_id: Annotated[int, Path(title="The band ID")]) -> BandWithID: # the annotated title will show up in the /docs
 	# search for band id
 	for b in BANDS_OBJ:
 		if b.id == band_id:
