@@ -31,6 +31,6 @@ You can then use [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to test your A
 
 ## Unit Tests
 
-For each example I created unit tests using [pytest](https://docs.pytest.org/en/stable/). You will see a file in each example named ``Test_<Name_of_Example>.py```. This file contains the unit tests for the example. 
+For each example I created unit tests using [pytest](https://docs.pytest.org/en/stable/). You will see a file in each example named ```Test_<Name_of_Example>.py```. This file contains the unit tests for the example. 
 
 If you want to run the unit test you can issues the command ```python -m pytest```
