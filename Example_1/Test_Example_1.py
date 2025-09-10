@@ -1,4 +1,6 @@
 # Unit tests for Example_1.py
+# python -m pytest
+
 from fastapi.testclient import TestClient
 from Example_1 import app
 
