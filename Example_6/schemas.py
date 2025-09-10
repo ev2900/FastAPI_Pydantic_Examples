@@ -1,6 +1,6 @@
 from datetime import date
 from enum import Enum
-from pydantic import BaseModel, validator
+from pydantic import BaseModel, field_validator
 
 class GenreURLChoices(Enum):
     ROCK = 'rock'
@@ -24,7 +24,7 @@ class BandBase(BaseModel):
     albums: list[Album] = [] # default to an empty list []
 
 class BandCreate(BandBase):
-    @validator('genre', pre=True)
+    @field_validator('genre', mode='before')
     def title_case_genre(cls, value):
         return value.title() # rock -> Rock etc.
 
