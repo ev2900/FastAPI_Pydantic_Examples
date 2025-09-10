@@ -40,8 +40,9 @@ async def bands(
 	genre: GenreURLChoices | None = None,
 	q: Annotated[str | None, Query(max_length=10)] = None
 ) -> list[BandWithID]:
+
 	bands_list = []
-	#
+	# genre query paramater and query paramater q is provided, see if q is in the name of the band, like a search
 	if genre and q == True:
 		BANDS_OBJ = band_list_to_object(BANDS)
 		for b in BANDS_OBJ:
