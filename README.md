@@ -34,3 +34,7 @@ You can then use [http://127.0.0.1:8000/](http://127.0.0.1:8000/) to test your A
 For each example I created unit tests using [pytest](https://docs.pytest.org/en/stable/). You will see a file in each example named ```Test_<Name_of_Example>.py```. This file contains the unit tests for the example. 
 
 If you want to run the unit test you can issues the command ```python -m pytest```
+
+If you are running on windows and you want to run all of the test scripts for every example you can optionally use the [run_all_unit_tests.ps1](https://github.com/ev2900/FastAPI_Pydantic_Examples/tree/main) powershell script.
+
+In the future I will probably add a GitHub action to run these tests with each commit.
