@@ -1,6 +1,6 @@
 # FastAPI with Pydantic Examples
 
-<img width="85" alt="map-user" src="https://img.shields.io/badge/views-247-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-012-green">
+<img width="85" alt="map-user" src="https://img.shields.io/badge/views-252-green"> <img width="125" alt="map-user" src="https://img.shields.io/badge/unique visits-012-green">
 
 [FastAPI](https://fastapi.tiangolo.com/) is a Python library and web framework designed for building APIs. It has the performance of comparable NodeJS and Go with the ease and familiarity of Python.
 
